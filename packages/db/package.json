@@ -1,0 +1,33 @@
+{
+  "name": "@tms/db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db-studio": "pnpm prisma studio",
+    "db-deploy": "pnpm prisma migrate deploy",
+    "db-migrate": "pnpm prisma migrate dev",
+    "db-generate": "prisma generate",
+    "db-seed": "pnpm prisma db seed",
+    "db-up": "docker compose up -d || docker-compose up -d",
+    "db-setup": "run-s db-up db-generate db-deploy db-seed",
+    "dx": "pnpm db-setup"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.11.1",
+    "prisma": "^6.11.1"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "@types/node": "^22.16.0",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "prisma": {
+    "seed": "ts-node --transpile-only ./seed.ts"
+  }
+}

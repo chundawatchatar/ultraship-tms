@@ -1,0 +1,15 @@
+# this file is a helper to run Cal.com locally
+# starts a postgres instance on port 5450 to use as a local db
+services:
+  postgres:
+    image: postgres:14
+    environment:
+      POSTGRES_DB: "tms"
+      POSTGRES_PASSWORD: ""
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5451:5432"
+volumes:
+  db_data:
