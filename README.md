@@ -22,16 +22,17 @@
     cd ultraship-tms
     ```
 
-2.  **Setup project:**
-    ```sh
-    pnpm dx
-    ```
 
-3.  **Set up environment variables:**
+2.  **Set up environment variables:**
 
     Create a `.env` file in the root of the project by using **.env.example** file.
     ```sh
     cp .env.example .env
+    ```
+
+3.  **Setup project:**
+    ```sh
+    pnpm dx
     ```
 
 ### Running the Application

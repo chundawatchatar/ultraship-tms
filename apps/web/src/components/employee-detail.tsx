@@ -31,10 +31,9 @@ export function EmployeeDetail({ employee, isOpen, onClose, onAction }: Employee
         </DialogHeader>
 
         <div className="space-y-6">
-          {/* Header */}
           <div className="flex items-start gap-4">
             <Avatar className="h-16 w-16">
-              <AvatarImage src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${employee.username}`} />
+              <AvatarImage src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${employee.name}`} />
               <AvatarFallback className="text-lg">
                 {employee.name
                   .split(" ")
@@ -56,7 +55,6 @@ export function EmployeeDetail({ employee, isOpen, onClose, onAction }: Employee
             </div>
           </div>
 
-          {/* Contact Information */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -80,7 +78,6 @@ export function EmployeeDetail({ employee, isOpen, onClose, onAction }: Employee
             </CardContent>
           </Card>
 
-          {/* Address */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -98,7 +95,6 @@ export function EmployeeDetail({ employee, isOpen, onClose, onAction }: Employee
             </CardContent>
           </Card>
 
-          {/* Company Information */}
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -115,7 +111,6 @@ export function EmployeeDetail({ employee, isOpen, onClose, onAction }: Employee
             </CardContent>
           </Card>
 
-          {/* Action Buttons */}
           <div className="flex gap-2 pt-4">
             <Button onClick={() => onAction("edit", employee)}>
               <Edit className="h-4 w-4 mr-2" />

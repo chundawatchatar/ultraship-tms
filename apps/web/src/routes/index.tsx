@@ -5,7 +5,7 @@ import { EmployeeGrid } from "@/components/employee-grid";
 import { EmployeeTiles } from "@/components/employee-tiles";
 import { EmployeeDetail } from "@/components/employee-detail";
 import { Pagination } from "@/components/pagination";
-import { useEmployees } from "@/hooks/useEmployees1";
+import { useEmployees } from "@/hooks/useEmployees";
 import type { Employee, PaginationInfo } from "@/types/employee";
 
 export const Route = createFileRoute("/")({
@@ -27,7 +27,6 @@ function EmployeeDashboard() {
     error,
   } = useEmployees({ page: currentPage, limit: itemsPerPage });
 
-  // Pagination logic
   const paginatedData = useMemo(() => {
     if (!employeesResponse)
       return { paginatedEmployees: [], paginationInfo: null };
@@ -68,7 +67,7 @@ function EmployeeDashboard() {
   };
 
   const handleAction = () => {
-    alert("working");
+    console.log("edit");
   };
 
   if (error) {
@@ -124,7 +123,6 @@ function EmployeeDashboard() {
         )}
       </main>
 
-      {/* Employee Detail Modal */}
       <EmployeeDetail
         employee={selectedEmployee}
         isOpen={isDetailOpen}

@@ -12,7 +12,6 @@ interface HeaderProps {
 export function Header({ isGridView, onViewToggle }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  // Close menu on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -22,7 +21,6 @@ export function Header({ isGridView, onViewToggle }: HeaderProps) {
 
     if (isMobileMenuOpen) {
       document.addEventListener("keydown", handleEscape)
-      // Prevent body scroll when menu is open
       document.body.style.overflow = "hidden"
     } else {
       document.body.style.overflow = "unset"
@@ -103,7 +101,6 @@ export function Header({ isGridView, onViewToggle }: HeaderProps) {
         </div>
       </header>
 
-      {/* Overlay Background */}
       {isMobileMenuOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-50 transition-opacity duration-300"
@@ -111,13 +108,11 @@ export function Header({ isGridView, onViewToggle }: HeaderProps) {
         />
       )}
 
-      {/* Sidebar Menu */}
       <div
         className={`fixed top-0 left-0 h-full w-80 bg-white shadow-xl z-50 transform transition-transform duration-300 ease-in-out ${
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {/* Menu Header */}
         <div className="flex items-center justify-between p-4 border-b">
           <h2 className="text-lg font-semibold">Menu</h2>
           <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
@@ -125,7 +120,6 @@ export function Header({ isGridView, onViewToggle }: HeaderProps) {
           </Button>
         </div>
 
-        {/* Menu Content */}
         <nav className="p-4 space-y-2 overflow-y-auto h-full pb-20">
           {menuItems.map((item) => (
             <div key={item.title} className="space-y-1">
