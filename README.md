@@ -12,6 +12,7 @@
 
 - Node.js (v18 or higher)
 - pnpm
+- Docker desktop
 
 ### Installation and Setup
 
