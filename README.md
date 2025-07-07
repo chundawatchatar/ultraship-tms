@@ -3,7 +3,7 @@
 ## Tech Stack
 
 - **Frontend**: React, TypeScript, Vite, TailwindCSS, Shadcn
-- **Backend**: Node.js, Express, TypeScript, tRPC, Prisma, Postgres
+- **Backend**: Node.js, Express, TypeScript, GraphQL, Prisma, Postgres
 - **Monorepo**: Turborepo, pnpm workspaces
 
 ## Getting Started
